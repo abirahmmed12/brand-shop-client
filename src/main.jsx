@@ -13,8 +13,12 @@ import Home from './Pages/Home';
 import Mycart from './Pages/Mycart';
 import AddProduct from './componets/AddProduct';
 import Login from './Pages/Login';
-import Register from './Pages/Register';
+
 import Brandproduct from './componets/Brandproduct';
+import Singleproduct from './componets/Singleproduct';
+import AuthProvider from './Authprovider/Authprovider';
+import Registration from './Pages/Registration';
+import PrivateRout from './componets/PrivateRout';
 
 const router = createBrowserRouter([
   {
@@ -25,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/brands')
+        loader: ()=> fetch('https://coffe-store-server-lzbuz07zt-abirahmmed12s-projects.vercel.app/brands')
       },
      
       {
         path: "/addproduct",
-        element: <AddProduct></AddProduct>,
+        element: <PrivateRout><AddProduct></AddProduct></PrivateRout>
         
       },
       {
@@ -44,10 +48,11 @@ const router = createBrowserRouter([
         
       },
       {
-        path: "/register",
-        element:<Register></Register>,
+        path: "/registration",
+        element:<Registration></Registration>,
         
       },
+     
       {
         path: "/brands/:brand",
        
@@ -60,12 +65,21 @@ const router = createBrowserRouter([
         
         
       },
+      {
+        path: "/product/:id",
+        element: <PrivateRout><Singleproduct></Singleproduct></PrivateRout>,
+        loader: ({ params }) => fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/create-service/${params.id}`)
+      }
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+   
+    
+  <AuthProvider>
+  <RouterProvider router={router} />
+  </AuthProvider>
+</React.StrictMode>,
 )

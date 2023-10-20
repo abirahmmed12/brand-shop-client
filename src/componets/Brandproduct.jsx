@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Product from "./Product";
+import Slider from "./Slider";
 
 const BrandProducts = () => {
     const { brand } = useParams();
@@ -8,7 +9,7 @@ const BrandProducts = () => {
 
     useEffect(() => {
         // Fetch data when the component mounts
-        fetch(`http://localhost:5000/create-service/${brand}`)
+        fetch(`https://coffe-store-server-lzbuz07zt-abirahmmed12s-projects.vercel.app/create-service/${brand}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
@@ -26,7 +27,10 @@ const BrandProducts = () => {
     }, [brand]); // Make sure to include brand as a dependency
 
     return (
-        <div className="grid grid-cols-4 max-w-screen-xl m-auto gap-5">
+        <div className="max-w-screen-xl m-auto">
+          <Slider></Slider>
+        <div className="lg:grid lg:grid-cols-4 lg:ml-0 ml-7 lg:mb-0  max-w-screen-xl m-auto gap-5">
+           
             {products.length === 0 ? (
                 <div className="text-center text-6xl text-red-600"> OOpps!! No products found for {brand}</div>
             ) : (
@@ -34,6 +38,7 @@ const BrandProducts = () => {
                     <Product key={product.name} product={product}></Product>
                 ))
             )}
+        </div>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExtraSection = () => {
     return (
-        <div>
+        <div className='lg:p-0 p-7 '>
             <img src="https://i.ibb.co/tDxqtdb/burgerking.jpg" alt="" />
             <section
   className="bg-gray-100 py-12 mt-8"
@@ -16,7 +16,7 @@ const ExtraSection = () => {
     <div className="text-center mb-10">
       <h2 className="text-4xl font-bold text-white">Our Commitment to You</h2>
       <p className="text-gray-600 text-lg mt-4">
-        At [Your Restaurant Name], your satisfaction is our top priority.
+        At CulinaryCrafters, your satisfaction is our top priority.
       </p>
     </div>
 
