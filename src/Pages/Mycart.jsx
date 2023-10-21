@@ -8,7 +8,7 @@ const MyCart = () => {
 
     useEffect(() => {
         if (user && user?.uid) {
-            fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/get-cart?id=${user?.uid}`)
+            fetch(`https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/get-cart?id=${user?.uid}`)
                 .then(res => res.json())
                 .then((data) => {
                     console.log(data, 'cartData');

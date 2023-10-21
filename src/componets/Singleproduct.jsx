@@ -27,7 +27,7 @@ const Singleproduct = () => {
       try {
 
 
-        fetch('https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/add-to-cart', {
+        fetch('https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/add-to-cart', {
           method: 'POST', // HTTP method
           headers: {
             'Content-Type': 'application/json',

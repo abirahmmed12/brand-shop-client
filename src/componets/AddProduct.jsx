@@ -5,7 +5,7 @@ const AddProduct = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/brands`, {
+        fetch(`https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/brands`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const AddProduct = () => {
         const newProduct = { brand, type, price, rating, name, img };
         console.log(newProduct)
 
-        fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/create-service`, {
+        fetch(`https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/create-service`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

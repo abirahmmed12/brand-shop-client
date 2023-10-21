@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('https://coffe-store-server-lzbuz07zt-abirahmmed12s-projects.vercel.app/brands')
+        loader: ()=> fetch('https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/brands')
       },
      
       {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <PrivateRout><Singleproduct></Singleproduct></PrivateRout>,
-        loader: ({ params }) => fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/create-service/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/create-service/${params.id}`)
       }
     ],
   },

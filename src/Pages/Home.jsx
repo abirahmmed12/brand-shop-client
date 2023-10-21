@@ -20,7 +20,7 @@ const Home = () => {
         <div className={`max-w-screen-xl m-auto ${isDarkMode ? 'bg-dark' : 'bg-light'}`}>
         <button
           onClick={toggleDarkMode}
-          className="p-2 fixed top-4 right-4 bg-gray-800 text-white rounded-full"
+          className="p-2 fixed top-4 -right-10 w-16 h-14 bg-gray-800 text-white rounded-full"
         >
           {isDarkMode ? 'Light' : 'Dark'} Mode
         </button>
