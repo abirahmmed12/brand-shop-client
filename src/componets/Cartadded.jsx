@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 
 const Cartadded = ({item}) => {
   const  { _id,brand, type, price, rating, name,img } = item
+  
   const handledlt = _id => {
     console.log(_id)
     Swal.fire({
@@ -17,7 +18,7 @@ const Cartadded = ({item}) => {
     }).then((result) => {
       if (result.isConfirmed) {
         
-        fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/add-to-cart/${_id}`,{
+        fetch(`https://brand-shop-q9478mt03-abirahmmed12s-projects.vercel.app/add-to-cart/${_id}`,{
           method: 'DELETE'
         })
         .then(res=>res.json())
