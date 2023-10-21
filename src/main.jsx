@@ -19,11 +19,13 @@ import Singleproduct from './componets/Singleproduct';
 import AuthProvider from './Authprovider/Authprovider';
 import Registration from './Pages/Registration';
 import PrivateRout from './componets/PrivateRout';
+import Errorpage from './Errorpage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Errorpage></Errorpage>,
    
     children: [
       {
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/mycart",
-        element: <Mycart></Mycart>,
+        element: <PrivateRout><Mycart></Mycart></PrivateRout>,
         
       },
       {
