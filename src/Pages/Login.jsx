@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, createContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Swal from 'sweetalert2';
@@ -6,6 +6,7 @@ import { AuthContext } from '../Authprovider/Authprovider';
 
 const Login = () => {
     const { logIn } = useContext(AuthContext);
+
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [loginError, setLoginError] = useState(null);
     const location = useLocation();
@@ -55,7 +56,7 @@ const Login = () => {
                     </div>
                 ) : null}
                 <form onSubmit={handleLogin} className="space-y-6" action="#">
-                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                    <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">Sign in to CulinaryCrafters</h5>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                         <input

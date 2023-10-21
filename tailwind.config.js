@@ -7,6 +7,10 @@ export default {
   theme: {
     extend: {},
   },
+  backgroundColor: {
+    light: 'white',
+    dark: '#1e1e1e',
+  },
   plugins: [require("daisyui")],
 }
 

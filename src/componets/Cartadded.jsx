@@ -1,7 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 const Cartadded = ({item}) => {
+  const  { _id,brand, type, price, rating, name,img } = item
+  const handledlt = _id => {
+    console.log(_id)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        fetch(`https://coffe-store-server-2x8ec96r6-abirahmmed12s-projects.vercel.app/add-to-cart/${_id}`,{
+          method: 'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data)
+          if(data.deletedCount>0)
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        })
+      }
+    })
+  }
     return (
         <div>
            <div className="mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border px-4 py-4 text-center md:max-w-lg md:flex-row md:items-start md:text-left">
@@ -26,7 +57,7 @@ const Cartadded = ({item}) => {
     <div className="mb-3"></div>
     <div className="flex space-x-2">
      
-      <button className="w-full rounded-lg border-2 border-transparent bg-red-600 px-4 py-2 font-medium text-white">Delete</button>
+      <button onClick={()=>handledlt(_id)} className="w-full rounded-lg border-2 border-transparent bg-red-600 px-4 py-2 font-medium text-white">Delete</button>
     </div>
   </div>
 </div>

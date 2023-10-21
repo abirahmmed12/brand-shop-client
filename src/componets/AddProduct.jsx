@@ -83,6 +83,10 @@ const AddProduct = () => {
                     <input type="text" id="type" name="type" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
                 <div className="mb-4">
+                    <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Short Description</label>
+                    <input type="text" id="type" name="type" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+                <div className="mb-4">
     <label htmlFor="price" className="block text-gray-700 font-bold mb-2">Price</label>
     <input type="text" id="price" name="price" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
 </div>
