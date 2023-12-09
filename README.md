@@ -9,3 +9,4 @@
 **Authentication and User Management:** Implement email and password-based authentication for user registration and login. Users should be able to toggle between the registration and login views. Display error messages when password requirements are not met during registration or when login credentials don't match. Additionally, provide at least one extra login method, such as social media (e.g., Google, Facebook, or GitHub) authentication. Once a user is logged in, display their username and profile picture in the navbar and include a logout button for easy session management.
 
 Live link: https://6533ddfe917348285f43f95f--creative-lebkuchen-ef12b9.netlify.app/
+
